@@ -17,6 +17,7 @@ bool cont(string s){
  int main(){
     vector<string>keyword={"int", "float", "double", "include", "if", "else" ,"namespace",
     "void", "include", "main", "return", "define", "do", "while", "for"};
+    
     vector<string>oprt = {"+", "-", "%", "*", "/", "^"};
 
     freopen("file.txt", "r", stdin);
@@ -36,16 +37,24 @@ bool cont(string s){
 
     for(int i = 0; i < v.size(); i++){
       if(find(keyword.begin(), keyword.end(), v[i])!= keyword.end())
-         cout<<"keyword"<<" ";
-      else if(find(oprt.begin(), oprt.end(), v[i])  != oprt.end()){
-         cout<<"operator"<<" ";
-      }
+         cout<<"Keyword"<<" ";
+      else if(find(oprt.begin(), oprt.end(), v[i])  != oprt.end())
+         cout<<"Arithmetic-Operator"<<" ";
       else if(number(v[i])){
-         cout<<"Constant"<<" ";
-      }else if(isalpha(v[i].at(0))){
+        string t = v[i];
+         int j;
+         for(j = 0; j < t.size(); j++){
+            if(t[j] == '.') break;
+         }
+         if(j == t.size()) cout<<"Integer-Number"<<" ";
+         else if(t.size() - j - 1 >= 3) cout<<"Double-Number"<<" ";
+         else cout<<"Float-Number"<< " ";
+      }
+      else if(isalpha(v[i].at(0))){
          if(cont(v[i])) cout<<"Identifier"<<" ";
          else cout<<"Invalid"<<" ";
-      }else cout<<"Invalid"<<" ";
+      }
+      else cout<<"Invalid"<<" ";
    }
    cout<<endl;
    return 0;
