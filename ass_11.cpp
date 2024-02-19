@@ -26,10 +26,6 @@ void synTree(string s){
 }
 
 
-
-
-
-
 int main(){
     freopen("file.txt", "r", stdin);
     string s;

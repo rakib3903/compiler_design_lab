@@ -29,5 +29,7 @@ int main(){
     if(p == "S")
     cout<<"accepted"<<endl;
     else cout<<"not accepted"<<endl;
+
+    
     return 0;
 }

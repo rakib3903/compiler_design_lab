@@ -22,7 +22,7 @@ int main(){
             so += s[i];
         }
     }
-
+    
     cout<<"Case : 1"<<endl;
     cout<<"number of words : "<<nw<<endl;
     cout<<"number of letters : "<<nl<<endl;

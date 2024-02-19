@@ -35,7 +35,7 @@ bool cont(string s){
     v.push_back(t);
 
     for(int i = 0; i < v.size(); i++){
-      if(find(keyword.begin(), keyword.end(), v[i])!= keyword.end())
+      if(find(keyword.begin(), keyword.end(), v[i]) != keyword.end())
          cout<<"keyword"<<" ";
       else if(find(oprt.begin(), oprt.end(), v[i])  != oprt.end()){
          cout<<"operator"<<" ";
